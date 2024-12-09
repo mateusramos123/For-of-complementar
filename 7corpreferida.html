@@ -8,11 +8,22 @@
     */
 
     //Entrada
+    let cores = ["Branco", "Azul", "Marrom", "Cinza", "Verde", "Amarelo", "Vermelho", "Preto"];
+    let favoritas = [];
+   
 
 
     //Processamento
+    for (let cor of cores){
+        let pergunta = prompt(`Você gosta desta cor? sim ou não: ${cor}`).toLowerCase();
+        if(pergunta == "sim"){
+            favoritas.push(cor);
+        }
+
+    }
 
 
     //Saída
+    document.write(`Suas cores preferidas são: ${favoritas.join(" - ")} e são ${favoritas.length} cores`);
 
 </script>

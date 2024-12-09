@@ -7,11 +7,17 @@
     */
 
     //Entrada
-
-
+    let lista = ["A", "E", 2, 4.8, "CINQUENTA", "Araquari", 80, 10, 3.2]; 
+    let soma = 0;
     //Processamento
-
+   
+    for (let numero of lista) {
+        if (typeof numero === "number" && !isNaN(numero)) {
+            soma +=numero
+        } 
+    }
 
     //Saída
+    document.write("Soma dos números é igual á "  + soma)
 
 </script>

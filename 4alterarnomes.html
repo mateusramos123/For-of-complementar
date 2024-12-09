@@ -1,5 +1,5 @@
 <script>
-    //Problema: Alterar Nomes
+    // Problema: Alterar Nomes
     /*
     Considere a existência dos seguintes nomes:
     let nomes = ["Hilário", "Rafaela", "José", "Bárbara", "Fábio", "Júlia"];
@@ -7,12 +7,30 @@
     Apresente a lista corrigida ao final do programa.
     */
 
-    //Entrada
+    // Entrada
+    let nomes = ["Hilário", "Rafaela", "José", "Bárbara", "Fábio", "Júlia"];
 
+    const caracteresComAcento = ["á", "é", "í", "ó", "ú"];
+    const caracteresSemAcento = ["a", "e", "i", "o", "u"];
 
-    //Processamento
+    let nomesCorrigidos = [];
 
+    // Processamento
+    for (let nome of nomes) {
+        let nomeCorrigido = ""; 
+        
+        for (let letra of nome) {
+            let letraMinuscula = letra.toLowerCase();
+            let posicao = caracteresComAcento.indexOf(letraMinuscula); 
+            if (posicao !== -1) {   
+                nomeCorrigido += caracteresSemAcento[posicao];
+            } else {
+                nomeCorrigido += letra;
+            }
+        }
+        nomesCorrigidos.push(nomeCorrigido); 
+    }
 
-    //Saída
-
+    // Saída
+    document.write(nomesCorrigidos);
 </script>
